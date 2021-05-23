@@ -2,7 +2,9 @@
 #include<stdlib.h>
 #include<string.h>
 
+char a, y = 'y', t = 't';
 char pg1, pg2, pg3, pg4, bs5, bs6, bs7;
+int jwb1, jwb2, jwb3, jwb4, jwb5, jwb6, jwb7;
 
 // fungsi untuk permulaan game
 void opening() {
@@ -28,24 +30,33 @@ void pilgan() {
   printf("a. Jepang\tc. China\nb. Rusia\td. Perancis\n\n");
   printf("Jawaban anda : ");
   scanf("%c", &pg1);
-
+  getchar();
+  if(pg1 == 'b' || pg1 == 'B'){jwb1 = 1;}
+  else {jwb1 = 0;}
+  
   printf("\n2. Presiden Amerika Serikat yang menggantikan Donald Trump\n\n");
   printf("a. Malala Yousafzai\tc. Joe Biden\nb. Barack Obama\t\td. Jacob Rothschild\n\n");
   printf("Jawaban anda : ");
   scanf("%c", &pg2);
   getchar();
+  if(pg2 == 'c' || pg2 == 'C'){jwb2 = 1;}
+  else {jwb2 = 0;}
 
   printf("\n3. Negara pemenang turnamen sepak bola Piala Dunia FIFA 2002\n\n");
   printf("a. Brasil\tc. Jerman\nb. Uruguay\td. Portugal\n\n");
   printf("Jawaban anda : ");
   scanf("%c", &pg3);
   getchar();
+  if(pg3 == 'a' || pg3 == 'A'){jwb3 = 1;}
+  else {jwb3 = 0;}
 
   printf("\n4. Tahun terjadinya insiden peledakan bom di World Trade Center(WTC) di Amerika Serikat\n\n");
   printf("a. 1994\t\tc. 1992\nb. 1990\t\td. 1993\n\n");
   printf("Jawaban anda : ");
   scanf("%c", &pg4);
   getchar();
+  if(pg4 == 'd' || pg4 == 'D'){jwb4 = 1;}
+  else {jwb4 = 0;}
 }
 
 // membuat fungsi soal Benar/Salah (B/S)
@@ -60,19 +71,50 @@ void BS() {
   printf("Jawaban anda : ");
   scanf("%c", &bs5);
   getchar();
+  if(bs5 == 's' || bs5 == 'S'){jwb5 = 1;}
+  else {jwb5 = 0;}
 
   printf("\n6. Cordoba adalah sebuah katedral yang dialihfungsikan menjadi masjid yang terletak di Spanyol (B/S)\n\n");
   printf("Jawaban anda : ");
   scanf("%c", &bs6);
   getchar();
+  if(bs6 == 's' || bs6 == 'S'){jwb6 = 1;}
+  else {jwb6 = 0;}
 
   printf("\n7. Australia merupakan sebuah benua yang memiliki beberapa negara bagian (B/S)\n\n");
   printf("Jawaban anda : ");
   scanf("%c", &bs7);
   getchar();
+  if(bs7 == 'b' || bs7 == 'B'){jwb7 = 1;}
+  else {jwb7 = 0;}
 
   printf("\n<<________________________________________________________________>>\n");
 }
+
+void hasil() {
+
+  int total;
+
+  total = jwb1 + jwb2 + jwb3 + jwb4 + jwb5 + jwb6 + jwb7;
+
+  printf("\nTotal jawaban yang benar : %d \n",total);
+  printf("\nTekan enter untuk melihat rincian jawaban....");getchar();
+  printf("\n 1.%s ",(jwb1==1)?"benar":"salah");
+  printf("\n 2.%s ",(jwb2==1)?"benar":"salah");
+  printf("\n 3.%s ",(jwb3==1)?"benar":"salah");
+  printf("\n 4.%s ",(jwb4==1)?"benar":"salah");
+  printf("\n 5.%s ",(jwb5==1)?"benar":"salah");
+  printf("\n 6.%s ",(jwb6==1)?"benar":"salah");
+  printf("\n 7.%s ",(jwb7==1)?"benar":"salah");
+}
+
+void closing() {
+  printf("\nApakah anda ingin main lagi? (y/t) \n");
+  printf("Jawaban anda : ");scanf("%s",&a);
+    if (a == y){pilgan();BS();hasil();closing();}
+    else if(a == t){EXIT_FAILURE;}
+}
+
 
 int main(int ArgumenAwal,char *argumen[]) {
 
@@ -125,6 +167,10 @@ else{
   pilgan();
 
   BS();
+  
+  hasil();
+  
+  closing();
 
   return 0;
 }
