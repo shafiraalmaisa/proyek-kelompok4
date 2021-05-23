@@ -21,7 +21,7 @@ void pilgan() {
   printf("\n\nSoal nomor 1-4 merupakan soal pilihan ganda. \nMari kita mulai!\n\n");
   getch();
 
-  printf("<<________________________________________________________________>>\n\n");
+  printf("\n<<________________________________________________________________>>\n\n");
 
   printf("1. Matryoshka merupakan boneka kayu yang berisikan boneka-boneka yang berukuran lebih kecil yang berasal dari negara\n\n");
   printf("a. Jepang\tc. China\nb. Rusia\td. Perancis\n\n");
@@ -51,7 +51,7 @@ void pilgan() {
 void BS() {
   printf("\n<<________________________________________________________________>>\n\n");
 
-  printf("\n\nSoal nomor 5-7 merupakan soal Benar atau Salah (B/S).\n\n");
+  printf("\nSoal nomor 5-7 merupakan soal Benar atau Salah (B/S).\n\n");
   printf("Tekan enter untuk melanjutkan...");
   getch();
 
