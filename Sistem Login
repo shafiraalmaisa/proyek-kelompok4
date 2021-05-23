@@ -2,16 +2,18 @@
 #include<stdlib.h>
 #include<string.h>
 
-int main(){
-   char username[25], password[25];
-   char usr[25], pas[25];
-   int status = 0, salah = 0;
+int main (int banyakArgumen,char *argumen[]) 
+{
+    if(banyakArgumen !=3){
+        printf("Maaf anda gagal untuk login!");
+        printf("\nCara penggunaan : ./FileAplikasiProgramUtama username password");
 
-   while(status < 3){
-      printf("Masukkan Username : ");
-      gets(usr);
-      printf("Masukkan Password : ");
-      gets(pas);
+
+    }
+
+    char usernameInput[10],passwordInput[10];
+    strcpy(usernameInput,argumen[1]);
+    strcpy(passwordInput,argumen[2]);
 
 
     FILE *fpr;
@@ -38,13 +40,12 @@ while(string[ctrl++]  != NULL){
 strcpy(username,string[0]);
 strcpy(password,string[1]);
 
-if( (strcmp(username,username)== 0) &&(strcmp(password,password)== 0)){
+if( (strcmp(usernameInput,username)== 0) &&(strcmp(passwordInput,password)== 0)){
     printf("Berhasil Login!\n");
-    break;
 }
 else{
      printf("Gagal login!\n");
  }
-   }
+
 return 0;
 }
