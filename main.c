@@ -117,6 +117,7 @@ if( (strcmp(usernameInput,username)== 0) &&(strcmp(passwordInput,password)== 0))
 }
 else{
      printf("Gagal login!\n");
+     return EXIT_FAILURE;
  }
 
   opening();
