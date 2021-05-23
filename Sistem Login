@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main(){
+   char username[25], password[25];
+   char usr[25], pas[25];
+   int status = 0, salah = 0;
+
+   while(status < 3){
+      printf("Masukkan Username : ");
+      gets(usr);
+      printf("Masukkan Password : ");
+      gets(pas);
+
+
+    FILE *fpr;
+
+    if((fpr = fopen("Database/login.bin","rb")) == NULL){
+        printf("gagal membuka");
+        return EXIT_FAILURE;
+    }
+
+char akun[25];
+fread(akun,sizeof(char),sizeof(akun)/sizeof(char),fpr);
+
+fclose(fpr);
+
+char *string[5];
+char username[25],password[25];
+int ctrl = 0;
+
+string [0] = strtok(akun,"/");
+while(string[ctrl++]  != NULL){
+    string[ctrl] = strtok(NULL,"/");
+}
+
+strcpy(username,string[0]);
+strcpy(password,string[1]);
+
+if( (strcmp(username,username)== 0) &&(strcmp(password,password)== 0)){
+    printf("Berhasil Login!\n");
+    break;
+}
+else{
+     printf("Gagal login!\n");
+ }
+   }
+return 0;
+}
