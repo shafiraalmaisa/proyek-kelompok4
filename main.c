@@ -91,6 +91,7 @@ void BS() {
   printf("\n<<________________________________________________________________>>\n");
 }
 
+// membuat fungsi hasil jawaban
 void hasil() {
 
   int total;
@@ -108,8 +109,9 @@ void hasil() {
   printf("\n 7.%s ",(jwb7==1)?"benar":"salah");
 }
 
+//membuat fungsi penutup
 void closing() {
-  printf("\nApakah anda ingin main lagi? (y/t) \n");
+  printf("\n\nApakah anda ingin main lagi? (y/t) \n");
   printf("Jawaban anda : ");scanf("%s",&a);
     if (a == y){pilgan();BS();hasil();closing();}
     else if(a == t){EXIT_FAILURE;}
