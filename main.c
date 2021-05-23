@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 
 char pg1, pg2, pg3, pg4, bs5, bs6, bs7;
 
@@ -13,13 +12,13 @@ void opening() {
 
   printf("\n\nBerani untuk bermain?\n");
   printf("Tekan enter untuk melanjutkan...");
-  getch();
+  getchar();
 }
 
 // membuat fungsi soal pilihan ganda
 void pilgan() {
   printf("\n\nSoal nomor 1-4 merupakan soal pilihan ganda. \nMari kita mulai!\n\n");
-  getch();
+  getchar();
 
   printf("\n<<________________________________________________________________>>\n\n");
 
@@ -53,7 +52,7 @@ void BS() {
 
   printf("\nSoal nomor 5-7 merupakan soal Benar atau Salah (B/S).\n\n");
   printf("Tekan enter untuk melanjutkan...");
-  getch();
+  getchar();
 
   printf("\n\n5. Lauterbrunnen merupakan kota di sekitar lembah yang terletak di Amerika Utara (B/S)\n\n");
   printf("Jawaban anda : ");
