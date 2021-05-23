@@ -19,7 +19,7 @@ int main (int banyakArgumen,char *argumen[])
     FILE *fpr;
 
     if((fpr = fopen("Database/login.bin","rb")) == NULL){
-        printf("gagal membuka");
+        printf("gagal membuka file");
         return EXIT_FAILURE;
     }
 
