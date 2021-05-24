@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-char a, y = 'y', t = 't';
+char a, y = 'y', t = 't', Y = 'Y', T='T';
 char pg1, pg2, pg3, pg4, bs5, bs6, bs7;
 int jwb1, jwb2, jwb3, jwb4, jwb5, jwb6, jwb7;
 
@@ -143,8 +143,8 @@ float hitungSkor() {
 void closing() {
   printf("\n\nApakah anda ingin main lagi? (y/t) \n");
   printf("Jawaban anda : ");scanf("%s",&a);
-    if (a == y){pilgan();BS();hasil();hitungSkor();closing();}
-    else if(a == t){EXIT_FAILURE;}
+    if (a == y || a == Y){pilgan();BS();hasil();hitungSkor();closing();}
+    else if(a == t || a == T){EXIT_FAILURE;}
 }
 
 
