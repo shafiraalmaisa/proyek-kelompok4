@@ -147,7 +147,7 @@ void closing() {
     else if(a == t || a == T){EXIT_FAILURE;}
 }
 
-
+//Sistem Login
 int main(int ArgumenAwal,char *argumen[]) {
 
     if(ArgumenAwal !=3){
@@ -174,7 +174,7 @@ fread(akun,sizeof(char),sizeof(akun)/sizeof(char),fpr);
 
 fclose(fpr);
 
-char *string[5];
+char *string[25];
 char username[25],password[25];
 int ctrl = 0;
 
