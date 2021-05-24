@@ -109,11 +109,41 @@ void hasil() {
   printf("\n 7.%s ",(jwb7==1)?"benar":"salah");
 }
 
+// Fungsi cek jawaban dan hitung skor
+float hitungSkor() {
+  float skor = 0;
+  if (pg1 == 'b' || pg1 == 'B') {
+  skor += 17.5;
+  }
+  if (pg2 == 'c' || pg2 == 'C') {
+  skor += 17.5;
+  }
+  if (pg3 == 'a' || pg3 == 'A') {
+  skor += 17.5;
+  }
+  if (pg4 == 'd' || pg4 == 'D') {
+  skor += 17.5;
+  }
+  if (bs5 == 's' || bs5 == 'S') {
+  skor += 10;
+  }
+  if (bs6 == 's' || bs6 == 'S') {
+  skor += 10;
+  }
+  if (bs7 == 'b' || bs7 == 'B') {
+  skor += 10;
+  }
+
+  printf("\n\nSkor yang Anda dapatkan: %.2f\n", skor);
+
+}
+
+
 //membuat fungsi penutup
 void closing() {
   printf("\n\nApakah anda ingin main lagi? (y/t) \n");
   printf("Jawaban anda : ");scanf("%s",&a);
-    if (a == y){pilgan();BS();hasil();closing();}
+    if (a == y){pilgan();BS();hasil();hitungSkor();closing();}
     else if(a == t){EXIT_FAILURE;}
 }
 
