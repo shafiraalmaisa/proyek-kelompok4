@@ -202,6 +202,8 @@ else{
   
   hasil();
   
+  hitungSkor();
+  
   closing();
 
   return 0;
